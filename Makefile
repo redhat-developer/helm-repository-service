@@ -1,5 +1,5 @@
 # application name
-APP ?= chart-streams
+APP ?= helm-repository-service
 # sanitizing app variable to become a valid go module name
 MODULE = $(subst -,,$(APP))
 

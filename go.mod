@@ -1,4 +1,4 @@
-module github.com/otaviof/chart-streams
+module github.com/redhat-developer/helm-repository-service
 
 go 1.13
 
@@ -12,15 +12,10 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.4.0
-	github.com/stretchr/testify v1.3.0
-	github.com/ugorji/go v1.1.7 // indirect
-	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550 // indirect
-	golang.org/x/net v0.0.0-20191011234655-491137f69257 // indirect
-	golang.org/x/sys v0.0.0-20191010194322-b09406accb47 // indirect
-	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
+	github.com/stretchr/testify v1.4.0
 	gopkg.in/src-d/go-billy.v4 v4.3.2
 	gopkg.in/src-d/go-git.v4 v4.13.1
-	k8s.io/apimachinery v0.0.0-20191014065749-fb3eea214746 // indirect
+	k8s.io/apimachinery v0.17.0 // indirect
 	k8s.io/client-go v11.0.0+incompatible // indirect
 	k8s.io/helm v2.14.3+incompatible
 )

@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
 )
 
 const (

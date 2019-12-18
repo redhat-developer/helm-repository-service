@@ -8,7 +8,7 @@ ENV GIT_COMMITTER_NAME devtools
 ENV GIT_COMMITTER_EMAIL devtools@redhat.com
 LABEL com.redhat.delivery.appregistry=true
 
-WORKDIR /go/src/github.com/otaviof/chart-streams
+WORKDIR /go/src/github.com/redhat-developer/helm-repository-service
 
 # Copy only relevant things (instead of all) to speed-up the build.
 COPY . .
@@ -28,8 +28,8 @@ LABEL maintainer "Devtools <devtools@redhat.com>"
 LABEL author "Shoubhik Bose <shbose@redhat.com>"
 ENV LANG=en_US.utf8
 
-COPY --from=builder /go/src/github.com/otaviof/chart-streams/build/chart-streams /usr/local/bin/chart-streams
+COPY --from=builder /go/src/github.com/redhat-developer/helm-repository-service/build/helm-repository-service /usr/local/bin/helm-repository-service
 
 USER 10001
 
-ENTRYPOINT [ "/usr/local/bin/chart-streams","serve" ]
+ENTRYPOINT [ "/usr/local/bin/helm-repository-service","serve" ]

@@ -10,7 +10,7 @@ import (
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
 	"gopkg.in/src-d/go-git.v4/storage/memory"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
 )
 
 // CommitInfo holds together time and commit hash.

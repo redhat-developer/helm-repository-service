@@ -6,8 +6,8 @@ import (
 
 	"gopkg.in/src-d/go-git.v4/plumbing"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/config"
-	"github.com/otaviof/chart-streams/pkg/chartstreams/repo"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/repo"
 )
 
 const (

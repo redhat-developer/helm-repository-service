@@ -6,10 +6,10 @@ import (
 	"gopkg.in/src-d/go-git.v4"
 	helmrepo "k8s.io/helm/pkg/repo"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/chart"
-	"github.com/otaviof/chart-streams/pkg/chartstreams/config"
-	"github.com/otaviof/chart-streams/pkg/chartstreams/index"
-	"github.com/otaviof/chart-streams/pkg/chartstreams/repo"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/chart"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/index"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/repo"
 )
 
 // GitChartProvider provides Helm charts from a specified Git repository.

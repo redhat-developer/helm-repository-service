@@ -3,7 +3,7 @@ package index
 import (
 	helmrepo "k8s.io/helm/pkg/repo"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/repo"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/repo"
 )
 
 // Builder provides a fluent API to build Helm index files.

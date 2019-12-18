@@ -12,7 +12,7 @@ import (
 
 	"gopkg.in/src-d/go-billy.v4"
 
-	"github.com/otaviof/chart-streams/pkg/billyutil"
+	"github.com/redhat-developer/helm-repository-service/pkg/billyutil"
 )
 
 type billyChartBuilder struct {

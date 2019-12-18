@@ -5,8 +5,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams"
-	"github.com/otaviof/chart-streams/pkg/chartstreams/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
 )
 
 // serveCmd sub-command to represent the server.
@@ -39,7 +39,7 @@ func runServeCmd(cmd *cobra.Command, args []string) {
 	}
 
 	log.Printf("Starting server with config: '%#v'", cfg)
-	s := chartstreams.NewServer(cfg)
+	s := helmrepositoryservice.NewServer(cfg)
 	if err := s.Start(); err != nil {
 		panic(err)
 	}

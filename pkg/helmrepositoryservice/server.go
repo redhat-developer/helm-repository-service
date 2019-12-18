@@ -1,4 +1,4 @@
-package chartstreams
+package helmrepositoryservice
 
 import (
 	"net/http"
@@ -9,8 +9,8 @@ import (
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/config"
-	"github.com/otaviof/chart-streams/pkg/chartstreams/provider"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/provider"
 )
 
 // ChartStreamServer represents the chartstreams server offering its API. The server puts together

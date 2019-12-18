@@ -3,7 +3,7 @@ package provider
 import (
 	"k8s.io/helm/pkg/repo"
 
-	"github.com/otaviof/chart-streams/pkg/chartstreams/chart"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/chart"
 )
 
 // ChartProvider group of methods to initialize a backend able to retrieve index and charts.
