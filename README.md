@@ -2,17 +2,20 @@
     <img alt="chart-streams logo" src="./assets/logo/chart-streams.png">
 </p>
 <p align="center">
-    <a alt="GoReport" href="https://goreportcard.com/report/github.com/otaviof/chart-streams">
-        <img alt="GoReport" src="https://goreportcard.com/badge/github.com/otaviof/chart-streams">
+    <a alt="GoReport" href="https://goreportcard.com/report/github.com/redhat-developer/helm-repository-service">
+        <img alt="GoReport" src="https://goreportcard.com/badge/github.com/redhat-developer/helm-repository-service">
     </a>
-    <a alt="Code Coverage" href="https://codecov.io/gh/otaviof/chart-streams">
-        <img alt="Code Coverage" src="https://codecov.io/gh/otaviof/chart-streams/branch/master/graph/badge.svg">
+    <a alt="Code Coverage" href="https://codecov.io/gh/redhat-developer/helm-repository-service">
+        <img alt="Code Coverage" src="https://codecov.io/gh/redhat-developer/helm-repository-service/branch/master/graph/badge.svg">
     </a>
-    <a href="https://godoc.org/github.com/otaviof/chart-streams/pkg/chartstreams">
-        <img alt="GoDoc Reference" src="https://godoc.org/github.com/otaviof/chart-streams/pkg/chartstreams?status.svg">
+    <a href="https://godoc.org/github.com/redhat-developer/helm-repository-service/pkg/chartstreams">
+        <img alt="GoDoc Reference" src="https://godoc.org/github.com/redhat-developer/helm-repository-service/pkg/chartstreams?status.svg">
     </a>
-    <a alt="CI Status" href="https://travis-ci.com/otaviof/chart-streams">
-        <img alt="CI Status" src="https://travis-ci.com/otaviof/chart-streams.svg?branch=master">
+    <a alt="CI Status" href="https://travis-ci.com/redhat-developer/helm-repository-service">
+        <img alt="CI Status" src="https://travis-ci.com/redhat-developer/helm-repository-service.svg?branch=master">
+    </a>
+     <a alt="CI Status" href="https://quay.io/repository/redhat-developer/helm-repository-service/status">
+        <img alt="CI Status" src="https://quay.io/repository/redhat-developer/helm-repository-service/status">
     </a>
 <!--
     <a alt="Docker-Cloud Build Status" href="https://hub.docker.com/r/otaviof/chart-streams">
@@ -21,9 +24,9 @@
   -->
 </p>
 
-# `chart-streams`
+# Helm Charts Repository Service
 
-`chart-streams` is a thin layer on top of a Git repository to make it behave as a Helm-Charts
+`Helm Charts Repository Service`, formerly known as `chart-streams`, is a thin layer on top of a Git repository to make it behave as a Helm-Charts
 repository would. With the the following advantages:
 
 - keeping all charts data in a single place
