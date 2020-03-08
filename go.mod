@@ -17,5 +17,5 @@ require (
 	gopkg.in/src-d/go-git.v4 v4.13.1
 	k8s.io/apimachinery v0.17.0 // indirect
 	k8s.io/client-go v11.0.0+incompatible // indirect
-	k8s.io/helm v2.14.3+incompatible
+	k8s.io/helm v2.16.3+incompatible
 )
