@@ -1,7 +1,7 @@
 package provider
 
 import (
-	"k8s.io/helm/pkg/repo"
+	"helm.sh/helm/v3/pkg/repo"
 
 	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/chart"
 )

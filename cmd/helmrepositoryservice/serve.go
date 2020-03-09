@@ -7,6 +7,7 @@ import (
 
 	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice"
 	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
+	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/provider"
 )
 
 // serveCmd sub-command to represent the server.
@@ -39,8 +40,14 @@ func runServeCmd(cmd *cobra.Command, args []string) {
 	}
 
 	log.Printf("Starting server with config: '%#v'", cfg)
-	s := helmrepositoryservice.NewServer(cfg)
+
+	p := provider.NewGitChartProvider(cfg)
+	if err := p.Initialize(); err != nil {
+		log.Fatalf("Error during chart provider initialization: '%q'", err)
+	}
+
+	s := helmrepositoryservice.NewServer(cfg, p)
 	if err := s.Start(); err != nil {
-		panic(err)
+		log.Fatalf("Error during server start: '%q'", err)
 	}
 }
