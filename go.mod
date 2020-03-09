@@ -13,4 +13,5 @@ require (
 	gopkg.in/src-d/go-billy.v4 v4.3.2
 	gopkg.in/src-d/go-git.v4 v4.13.1
 	helm.sh/helm/v3 v3.1.1
+	sigs.k8s.io/yaml v1.2.0
 )
