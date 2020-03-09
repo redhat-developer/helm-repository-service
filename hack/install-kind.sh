@@ -1,40 +1,49 @@
 #!/bin/bash
 #
-# Deploy kubectl and KinD, adding configuration to use KinD as the default cluster.
+# Installs kubectl and KinD for Travis-CI (Ubuntu). Docker is a dependency for this script, in order
+# to run KinD, and it needs to use the actual "docker" client in command-line.
 #
 
 set -eu
 
-KUBECTL_VERSION=${KUBECTL_VERSION:-}
-KUBECTL_URL="https://storage.googleapis.com"
-KUBECTL_URL_PATH="kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
-
-KUBECTL_TARGET_DIR="${KUBECTL_TARGET_DIR:-/home/travis/bin}"
-KUBECTL_BIN="${KUBECTL_TARGET_DIR}/kubectl"
-
-function die () {
-    echo "[ERROR] ${*}" 1>&2
-    exit 1
-}
+sudo apt-get update > /dev/null && \
+    sudo apt-get install -y \
+        apt-transport-https \
+        curl \
+        git
 
 #
-# kubectl
+# Kubectl
 #
 
-[[ -z "${KUBECTL_VERSION}" ]] && die "Can't find KUBECTL_VERSION'!"
+echo "# Configuring kubectl APT repository..."
 
-curl --location --output "${KUBECTL_BIN}" "${KUBECTL_URL}/${KUBECTL_URL_PATH}"
-chmod +x "${KUBECTL_BIN}"
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+    |sudo apt-key add -
+
+if [ ! -f "/etc/apt/sources.list.d/kubernetes.list" ] ; then
+    echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" \
+        |sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+fi
+
+echo "# Installing kubectl..."
+sudo apt-get update && \
+    sudo apt-get install -y kubectl
+
+echo "# Kubectl version: `kubectl version`"
 
 #
 # KinD
 #
 
-go get sigs.k8s.io/kind
-kind create cluster
+echo "# Installing KinD..."
+GO111MODULE=off go get sigs.k8s.io/kind
 
-#
-# Cluster Config
-#
+echo "# Creating a new Kubernetes cluster..."
+kind --quiet create cluster
 
-$KUBECTL_BIN config use-context kind-kind
+echo "# Using KinD context..."
+kubectl config use-context "kind-kind"
+
+echo "# KinD nodes:"
+kubectl get nodes
