@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"gopkg.in/src-d/go-git.v4"
-	helmrepo "k8s.io/helm/pkg/repo"
+	helmrepo "helm.sh/helm/v3/pkg/repo"
 
 	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/chart"
 	"github.com/redhat-developer/helm-repository-service/pkg/helmrepositoryservice/config"
@@ -32,7 +32,6 @@ func (g *GitChartProvider) initializeRepository() error {
 	var err error
 	g.gitRepo, err = repo.NewGitChartRepo(g.config)
 	return err
-
 }
 
 // buildIndexFile instantiate global index.
